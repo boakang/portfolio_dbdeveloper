@@ -250,13 +250,13 @@ export default function DatabaseDeveloperPortfolio() {
                   <span className="label">Email:</span> huynbakhang@gmail.com
                 </div>
                 <div className="aboutInfoItem">
-                  <span className="label">GitHub:</span> github.com/boakang
-                </div>
-                <div className="aboutInfoItem">
                   <span className="label">Location:</span> Thu Duc, Ho Chi Minh City
                 </div>
                 <div className="aboutInfoItem">
                   <span className="label">Major:</span> Information Systems
+                </div>
+                <div className="aboutInfoItem">
+                  <span className="label">Education:</span> University of Information Technology (UIT - Vietnam National University), 2022 - current
                 </div>
               </div>
             </div>

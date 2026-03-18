@@ -421,9 +421,10 @@ html {
 }
 
 .aboutInfoItem {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 8px;
+  align-items: baseline;
 }
 
 .infoList {
