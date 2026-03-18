@@ -2,6 +2,21 @@ import './DatabaseDeveloperPortfolio.css'
 import profilePhoto from './assets/ava.png'
 
 export default function DatabaseDeveloperPortfolio() {
+  const skillIconByItem = {
+    'SQL Server (T-SQL)': 'microsoftsqlserver-plain',
+    'ERD, Normalization': 'microsoftsqlserver-plain',
+    'Constraints & Data Integrity': 'microsoftsqlserver-plain',
+    'Indexing & Query Tuning': 'microsoftsqlserver-plain',
+    'Execution Plan Analysis (SQL Server Management Studio (SSMS))': 'microsoftsqlserver-plain',
+    'ASP.NET Core Web API': 'dotnetcore-plain',
+    'Entity Framework Core': 'dotnetcore-plain',
+    'RESTful CRUD APIs': 'swagger-plain',
+    'Delta Sync (LastModified)': 'dotnetcore-plain',
+    'SQL Server Management Studio (SSMS)': 'microsoftsqlserver-plain',
+    'Git / GitHub': 'github-original',
+    'Visual Studio Code': 'vscode-plain',
+  }
+
   const skillGroups = [
     {
       title: 'Database',
@@ -10,7 +25,7 @@ export default function DatabaseDeveloperPortfolio() {
         'ERD, Normalization',
         'Constraints & Data Integrity',
         'Indexing & Query Tuning',
-        'Execution Plan Analysis (SSMS)',
+        'Execution Plan Analysis (SQL Server Management Studio (SSMS))',
       ],
     },
     {
@@ -24,7 +39,7 @@ export default function DatabaseDeveloperPortfolio() {
     },
     {
       title: 'Tools',
-      items: ['SSMS', 'Git / GitHub', 'Visual Studio Code'],
+      items: ['SQL Server Management Studio (SSMS)', 'Git / GitHub', 'Visual Studio Code'],
     },
   ]
 
@@ -136,9 +151,18 @@ export default function DatabaseDeveloperPortfolio() {
             {skillGroups.map((group) => (
               <div key={group.title} className="card">
                 <h3 className="cardTitle">{group.title}</h3>
-                <ul className="list">
+                <ul className="skillList">
                   {group.items.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item} className="skillRow">
+                      <span className="skillLogo" aria-hidden="true">
+                        {skillIconByItem[item] ? (
+                          <i className={`devicon-${skillIconByItem[item]}`} />
+                        ) : (
+                          <span className="skillLogoFallback">•</span>
+                        )}
+                      </span>
+                      <span className="skillLabel">{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
