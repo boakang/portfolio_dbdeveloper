@@ -1,4 +1,5 @@
 import './DatabaseDeveloperPortfolio.css'
+import profilePhoto from './assets/ava.png'
 
 export default function DatabaseDeveloperPortfolio() {
   const skillGroups = [
@@ -23,7 +24,7 @@ export default function DatabaseDeveloperPortfolio() {
     },
     {
       title: 'Tools',
-      items: ['SSMS', 'Git / GitHub'],
+      items: ['SSMS', 'Git / GitHub', 'Visual Studio Code'],
     },
   ]
 
@@ -202,28 +203,37 @@ export default function DatabaseDeveloperPortfolio() {
             <p className="sectionDesc">Short and relevant background.</p>
           </div>
 
-          <div className="aboutGrid">
-            <div className="card cardPadded">
-              <h3 className="cardTitle">Summary</h3>
-              <p className="cardText">
-                I enjoy designing relational schemas, enforcing data integrity, and building backend APIs that reflect real business workflows.
-              </p>
+          <div className="aboutSplit">
+            <div className="aboutPhotoWrap">
+              <img
+                className="aboutPhoto"
+                src={profilePhoto}
+                alt="Huỳnh Bá Khang"
+              />
             </div>
-            <div className="card cardPadded">
-              <h3 className="cardTitle">Quick Info</h3>
-              <div className="infoList">
-                <p>
+
+            <div className="aboutText">
+              <h3 className="aboutTitle">Huỳnh Bá Khang — Database Developer Intern</h3>
+              <p className="cardText">
+                I focus on SQL Server database design and .NET backend development. I enjoy turning business workflows into clean relational schemas, consistent CRUD APIs, and maintainable documentation.
+              </p>
+              <p className="cardText">
+                In projects, I work on constraints, indexing, and query tuning using execution plans to keep data accurate and performance stable.
+              </p>
+
+              <div className="aboutInfo">
+                <div className="aboutInfoItem">
                   <span className="label">Email:</span> huynbakhang@gmail.com
-                </p>
-                <p>
+                </div>
+                <div className="aboutInfoItem">
                   <span className="label">GitHub:</span> github.com/boakang
-                </p>
-                <p>
+                </div>
+                <div className="aboutInfoItem">
                   <span className="label">Location:</span> Thu Duc, Ho Chi Minh City
-                </p>
-                <p>
+                </div>
+                <div className="aboutInfoItem">
                   <span className="label">Major:</span> Information Systems
-                </p>
+                </div>
               </div>
             </div>
           </div>
