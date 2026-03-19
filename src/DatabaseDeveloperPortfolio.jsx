@@ -48,7 +48,7 @@ export default function DatabaseDeveloperPortfolio() {
     time: '12/2025 – 2/2026',
     tech: 'ASP.NET Core Web API • Entity Framework Core • SQL Server',
     summary:
-      'Backend system for inventory and order workflows with a SQL Server schema, REST APIs, and delta-sync endpoints, supported by health checks and database documentation.',
+      'A distribution & retail (DMS/ERP-like) backend project: catalog, inventory, and order workflows, plus Web/Mobile data sync and REST APIs for core business operations. Focused on clean relational design, query performance, and maintainable database documentation.',
     links: [
       {
         label: 'Backend Repository',
@@ -63,13 +63,19 @@ export default function DatabaseDeveloperPortfolio() {
         href: 'https://github.com/boakang/Inventory_OrderSyncManagementSystem_sqlserver',
       },
     ],
+    hqsoftMatch: [
+      'Design tables + ERD and define PK/FK relationships',
+      'Write SQL (SPs/Functions/Views) for business logic and performance',
+      'Support .NET team with EF Core mapping and Web API data flows',
+      'Check data integrity, fix issues, and tune slow queries (execution plans)',
+      'Keep database docs updated (schema notes + Data Dictionary)',
+    ],
     contributions: [
-      'Designed ERD + Data Dictionary; defined PK/FK and naming conventions',
-      'Implemented SQL Server schema with constraints and indexes for common queries',
-      'Built REST CRUD APIs (ASP.NET Core + EF Core) with validation rules',
-      'Implemented delta sync endpoints based on LastModified for incremental updates',
-      'Added health-check APIs (DB connectivity + sample query execution)',
-      'Profiled and tuned slow queries using execution plans (indexing/rewrites)',
+      'ERD + DDL scripts: tables, constraints (PK/FK/UNIQUE/CHECK), and indexes',
+      'Stored procedures/views for key workflows (orders, inventory, lookups)',
+      'Query tuning pass using execution plans + targeted indexing',
+      'ASP.NET Core + EF Core CRUD APIs (validation, paging, search)',
+      'Delta-sync endpoints (LastModified) + Data Dictionary documentation',
     ],
   }
 
@@ -173,7 +179,9 @@ export default function DatabaseDeveloperPortfolio() {
         <section id="projects" className="section">
           <div className="sectionHeader">
             <h2 className="sectionTitle">My Projects</h2>
-            <p className="sectionDesc">Featured project with real database work.</p>
+            <p className="sectionDesc">
+              details
+            </p>
           </div>
 
           <div className="projectGrid">
@@ -188,7 +196,14 @@ export default function DatabaseDeveloperPortfolio() {
 
               <p className="cardText">{project.summary}</p>
 
-              <h4 className="subTitle">Key Contributions</h4>
+              <h4 className="subTitle">Role Tasks</h4>
+              <ul className="bulletList">
+                {project.hqsoftMatch.map((text) => (
+                  <li key={text}>{text}</li>
+                ))}
+              </ul>
+
+              <h4 className="subTitle">Selected Deliverables (Evidence)</h4>
               <ul className="bulletList">
                 {project.contributions.map((text) => (
                   <li key={text}>{text}</li>
@@ -210,12 +225,6 @@ export default function DatabaseDeveloperPortfolio() {
                     {link.label}
                   </a>
                 ))}
-              </div>
-              <div className="miniCard">
-                <h4 className="miniTitle">Database focus</h4>
-                <p className="cardText">
-                  ERD, normalization, constraints, indexing, query tuning, and health-check flows.
-                </p>
               </div>
             </div>
           </div>
